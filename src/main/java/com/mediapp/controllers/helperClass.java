@@ -31,7 +31,7 @@ public class helperClass {
     }
 
     public void loadPage(String url){
-        System.out.println("Loading page : '"+url+"'\n");
+        System.out.println("Loading page : '"+url.substring(7)+"'\n");
         try{
             Parent root1 = FXMLLoader.load(getClass().getResource(url));
             Stage stage = Main.parentWindow;

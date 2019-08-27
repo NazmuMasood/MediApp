@@ -194,6 +194,7 @@ public class PatientOrder implements Initializable {
         order_table.setItems(null);
         desiredDrugList = FXCollections.observableArrayList();
         desiredDrugListEmpty = true;
+        total = 0; total_label.setText("");
     }
 
     //remove from cart

@@ -96,8 +96,8 @@ public class PatientOrder implements Initializable {
 
                 //both search by "name","category" selected
                 if (name_menu_item.isSelected() && category_menu_item.isSelected()) {
-                    System.out.println("Please select either of the two 'search by' options");
-                    sendMessage("Please select either of the two 'search by' options");
+                    System.out.println("Please select only one 'search by' options");
+                    sendMessage("Please select only one 'search by' options");
                 }
 
             }

@@ -2,22 +2,22 @@ package com.mediapp.controllers.auth;
 
 public final class UserSession {
 
-    private static UserSession instance;
+    //private UserSession instance;
 
     private String username;
     private String privilege;
 
-    private UserSession(String username, String privilege) {
+    public UserSession(String username, String privilege) {
         this.username = username;
         this.privilege = privilege;
     }
 
-    public static UserSession getInstace(String username, String privilege) {
+    /*public UserSession getInstance(String username, String privilege) {
         if(instance == null) {
             instance = new UserSession(username, privilege);
         }
         return instance;
-    }
+    }*/
 
     public String getUsername() {
         return username;

@@ -45,7 +45,7 @@ public class Homepage implements Initializable {
         new helperClass().goToMainMenu();
         //Clears the session variable
         AdminLogin.user.cleanUserSession();
-        System.out.println("After logging out, User is : "+AdminLogin.user.getUsername());
+        System.out.println("After logging out, User is : @"+AdminLogin.user.getUsername());
     }
 
 }

@@ -32,7 +32,7 @@ public class PatientLogin implements Initializable {
     @FXML
     private Hyperlink forgot_password_hlink;
 
-    private String username; private String privilege; public static UserSession user;
+    public static UserSession user;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -53,7 +53,7 @@ public class PatientLogin implements Initializable {
         }
 
         if (checkCredentials()){
-            System.out.println("Login success");
+            System.out.println("Login success : @"+username_field.getText());
             sendMessage("Login success : @"+username_field.getText());
 
             setUserSession(username_field.getText(),"patient");
@@ -100,17 +100,17 @@ public class PatientLogin implements Initializable {
     }
 
     private void goToMainMenu(){
-        System.out.println("Main menu hlink clicked from login page");
+        //System.out.println("Main menu hlink clicked");
         new helperClass().goToMainMenu();
     }
 
     private void goToSignupPage(){
-        System.out.println("Signup page hlink clicked from Doctor login ");
+        //System.out.println("Signup page hlink clicked");
         new helperClass().loadPage("/views/auth/patient_signup.fxml");
     }
 
     private void setNewPassword(){
-        System.out.println("Forgot password hlink clicked");
+        //System.out.println("Forgot password hlink clicked");
         new helperClass().loadPage("/views/auth/patient_forgot_password.fxml");
     }
 
@@ -125,10 +125,8 @@ public class PatientLogin implements Initializable {
     }
 
     private void setUserSession(String username, String privilege){
-        this.username = username;
-        this.privilege = privilege;
-
         //Setting session variable for current logged-in user
-        user = UserSession.getInstace(username, privilege);
+        //user = UserSession.getInstance(username, privilege);
+        user = new UserSession(username, privilege);
     }
 }

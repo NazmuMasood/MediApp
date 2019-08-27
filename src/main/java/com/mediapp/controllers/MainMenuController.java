@@ -23,15 +23,7 @@ public class MainMenuController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("Program has been initialized");
-
-        //Show title / info of the imageView
-        //Not working, at least, for this project
-        /*
-        Tooltip.install(doctor_icon, new Tooltip("Doctor panel"));
-        Tooltip.install(patient_icon, new Tooltip("Patient panel"));
-        Tooltip.install(management_icon, new Tooltip("Management panel"));
-        */
+        System.out.println("Program has been initialized \n");
 
         doctor_icon.setPickOnBounds(true); // allows click on transparent areas
         doctor_icon.setOnMouseClicked(e -> getUserType("Doctor"));
@@ -45,7 +37,7 @@ public class MainMenuController implements Initializable {
 
     public void getUserType(String userType){
         try {
-            System.out.println("User is : "+userType+" \nLoading login menu..");
+            System.out.println("User type : "+userType+"\n");
 
             if(userType.equals("Doctor")){
                 new helperClass().loadPage("/views/auth/doctor_login.fxml");

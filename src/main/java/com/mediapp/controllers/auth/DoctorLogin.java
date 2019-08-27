@@ -51,7 +51,7 @@ public class DoctorLogin implements Initializable {
         }
 
         if (checkCredentials()){
-            System.out.println("Login success");
+            System.out.println("Login success : @"+username_field.getText());
             sendMessage("Login success : @"+username_field.getText());
            // login();
         }
@@ -96,17 +96,17 @@ public class DoctorLogin implements Initializable {
     }
 
     private void goToMainMenu(){
-        System.out.println("Main menu hlink clicked from login page");
+        //System.out.println("Main menu hlink clicked");
         new helperClass().goToMainMenu();
     }
 
     private void goToSignupPage(){
-        System.out.println("Signup page hlink clicked from Doctor login ");
+        //System.out.println("Signup page hlink clicked");
         new helperClass().loadPage("/views/auth/doctor_signup.fxml");
     }
 
     private void setNewPassword(){
-        System.out.println("Forgot password hlink clicked");
+        //System.out.println("Forgot password hlink clicked");
         new helperClass().loadPage("/views/auth/doctor_forgot_password.fxml");
     }
 

@@ -32,7 +32,7 @@ public class AdminLogin implements Initializable {
     private AnchorPane login_anchorPane;
     @FXML
     private Hyperlink main_menu_hlink;
-    private String username; private String privilege; public static UserSession user;
+    public static UserSession user;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -51,8 +51,8 @@ public class AdminLogin implements Initializable {
         }
 
         if (checkCredentials()){
-            System.out.println("Login success");
-            sendMessage("Login success");
+            System.out.println("Login success : @"+username_field.getText());
+            sendMessage("Login success : @"+username_field.getText());
 
             setUserSession(username_field.getText(),"admin");
             login();
@@ -98,7 +98,7 @@ public class AdminLogin implements Initializable {
     }
 
     private void goToMainMenu(){
-        System.out.println("Main menu hlink clicked from login page");
+        //System.out.println("Main menu hlink clicked");
         new helperClass().goToMainMenu();
     }
 
@@ -113,11 +113,9 @@ public class AdminLogin implements Initializable {
     }
 
     private void setUserSession(String username, String privilege){
-        this.username = username;
-        this.privilege = privilege;
-
         //Setting session variable for current logged-in user
-        user = UserSession.getInstace(username, privilege);
+        // user = UserSession.getInstance(username, privilege);
+        user = new UserSession(username, privilege);
     }
 
 }

@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 public class helperClass {
     public void goToMainMenu(){
-        System.out.println("Going back to main menu");
+        //System.out.println("Going back to main menu");
         try {
             Parent root1 = FXMLLoader.load(getClass().getResource("/views/main_menu.fxml"));
             Stage stage = Main.parentWindow;
@@ -31,7 +31,7 @@ public class helperClass {
     }
 
     public void loadPage(String url){
-        System.out.println("Loading requested page...: "+url);
+        System.out.println("Loading page : '"+url+"'\n");
         try{
             Parent root1 = FXMLLoader.load(getClass().getResource(url));
             Stage stage = Main.parentWindow;
@@ -43,12 +43,4 @@ public class helperClass {
         }
     }
 
-//    public void executeSqlQuery(String query){
-//        ConnectionClass connectionClass = new ConnectionClass();
-//        Connection connection = connectionClass.getConnection();
-//        String url = query;
-//
-//
-//
-//    }
 }

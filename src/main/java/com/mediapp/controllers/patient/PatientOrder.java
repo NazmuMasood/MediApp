@@ -222,7 +222,7 @@ public class PatientOrder implements Initializable {
         drugSelected = drugList.get(index);
 
         order_drug_name_field.setText(drugSelected.getName());
-        order_drug_quantity_field.requestFocus();
+        order_drug_quantity_field.requestFocus(); order_drug_quantity_field.setPromptText("Quantity");
     }
 
     //search method
@@ -246,8 +246,8 @@ public class PatientOrder implements Initializable {
 
                 //both search by "name","category" selected
                 if (name_menu_item.isSelected() && category_menu_item.isSelected()) {
-                    System.out.println("Please select only one 'search by' options");
-                    sendMessage("Please select only one 'search by' options");
+                    System.out.println("Please select only one 'search by' option");
+                    sendMessage("Please select only one 'search by' option");
                     /*System.out.println("Both name & category selected");
                     //Below code doesn't produce desired result for some strange reason
                     String url = "select * from products where CONCAT(name, '', category) like ?";
